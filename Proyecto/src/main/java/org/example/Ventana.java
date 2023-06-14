@@ -12,47 +12,37 @@ public class Ventana extends JFrame {
 
         JPanel panel = new JPanel();
         panel.setBackground(Color.BLACK);
-        panel.setLayout(new GridLayout(3, 1));
+        panel.setLayout(new GridLayout(2, 1)); // 2 filas, 1 columna
 
-        JButton boton1 = new JButton("Reservar Pasajes");
-        JButton boton2 = new JButton("Seleccionar Lugar");
-        JButton boton3 = new JButton("Pagar");
+        JButton boton1 = new JButton("Reservar");
+        JButton boton2 = new JButton("Ver Boletos Disponibles");
 
         boton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ReservarPasajes ventanaNueva = new ReservarPasajes();
-                ventanaNueva.setVisible(true);
-                dispose();
+                SeleccionarOrigen seleccionarLugar = new SeleccionarOrigen();
+                seleccionarLugar.setVisible(true);
+                dispose(); // Cierra la ventana actual
+
             }
         });
 
         boton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SeleccionarLugar ventanaNueva2 = new SeleccionarLugar();
-                ventanaNueva2.setVisible(true);
-            }
-        });
-
-        boton3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
+                SeleccionarAsientos reservarPasajes = new SeleccionarAsientos();
+                reservarPasajes.setVisible(true);
+                dispose(); // Cierra la ventana actual
             }
         });
 
         panel.add(boton1);
         panel.add(boton2);
-        panel.add(boton3);
 
         add(panel);
         pack();
         setLocationRelativeTo(null);
-        setVisible(true);
-    }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Ventana());
     }
 }
+
