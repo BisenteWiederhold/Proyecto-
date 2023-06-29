@@ -15,12 +15,12 @@ public class SeleccionarBoleto extends JFrame {
 
         for (int i = 1; i <= 6; i++) {
             JLabel label = new JLabel("Boleto + hora  " + i);
-            JButton comprarButton = new JButton("Comprar");
+            JButton comprarButton = new JButton("Seleccionar");
             comprarButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    SeleccionarAsientos seleccionarAsientos = new SeleccionarAsientos();
-                    seleccionarAsientos.setVisible(true);
+                    SeleccionarTipoDeBus seleccionarTipoDeBus = new  SeleccionarTipoDeBus();
+                    seleccionarTipoDeBus.setVisible(true);
                     dispose();
                 }
             });

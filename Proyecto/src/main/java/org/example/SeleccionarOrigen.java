@@ -10,8 +10,14 @@ public class SeleccionarOrigen extends JFrame {
         setPreferredSize(new Dimension(400, 350));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new BorderLayout());
+        // Cargar la imagen de fondo
+        ImageIcon backgroundImage = new ImageIcon("C:\\Users\\vicen\\Desktop\\Proyecto-\\Imagenes\\Fondo.jpg");
+        JLabel backgroundLabel = new JLabel(backgroundImage);
+        backgroundLabel.setHorizontalAlignment(JLabel.CENTER);
+
+        // Crear el panel principal con el fondo de imagen
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(backgroundLabel, BorderLayout.CENTER);
 
         JPanel opcionesPanel = new JPanel();
         opcionesPanel.setLayout(new GridLayout(2, 1));
@@ -35,19 +41,19 @@ public class SeleccionarOrigen extends JFrame {
         continuarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SeleccionarTipoDeBus seleccionarBoleto = new SeleccionarTipoDeBus();
+                SeleccionarBoleto seleccionarBoleto = new SeleccionarBoleto();
                 seleccionarBoleto.setVisible(true);
-                dispose(); // Cierra la ventana actual
+                dispose();
             }
         });
 
-
+        botonPanel.setOpaque(false);
         botonPanel.add(continuarButton);
 
         panel.add(opcionesPanel, BorderLayout.CENTER);
         panel.add(botonPanel, BorderLayout.SOUTH);
 
-        add(panel);
+        setContentPane(panel);
         pack();
         setLocationRelativeTo(null);
 

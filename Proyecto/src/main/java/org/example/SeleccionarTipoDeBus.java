@@ -22,8 +22,8 @@ public class SeleccionarTipoDeBus extends JFrame {
         salonCamaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SeleccionarBoleto seleccionarBoleto = new SeleccionarBoleto();
-                seleccionarBoleto.setVisible(true);
+                Ventana ventanaPrincipal = new Ventana();
+                ventanaPrincipal.setVisible(true);
                 dispose();
             }
         });
@@ -33,8 +33,8 @@ public class SeleccionarTipoDeBus extends JFrame {
         semiCamaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SeleccionarBoleto seleccionarBoleto = new SeleccionarBoleto();
-                seleccionarBoleto.setVisible(true);
+                Ventana ventanaPrincipal = new Ventana();
+                ventanaPrincipal.setVisible(true);
                 dispose();
             }
         });
