@@ -17,10 +17,10 @@ public class SeleccionarOrigen extends JFrame {
         opcionesPanel.setLayout(new GridLayout(2, 1));
 
         JLabel label1 = new JLabel("Opción 1:");
-        JComboBox<String> comboBox1 = new JComboBox<>(new String[]{"Punta Arenas", "Puerto Montt", "Concepción", "Santiago", "Iquique"});
+        JComboBox<String> comboBox1 = new JComboBox<>(new String[]{"Punta Arenas", "Puerto Montt", "Concepción", "Santiago", "Valparaiso"});
 
         JLabel label2 = new JLabel("Opción 2:");
-        JComboBox<String> comboBox2 = new JComboBox<>(new String[]{"Punta Arenas", "Puerto Montt", "Concepción", "Santiago", "Iquique"});
+        JComboBox<String> comboBox2 = new JComboBox<>(new String[]{"Punta Arenas", "Puerto Montt", "Concepción", "Santiago", "Valparaiso"});
 
         opcionesPanel.add(label1);
         opcionesPanel.add(comboBox1);
@@ -35,11 +35,12 @@ public class SeleccionarOrigen extends JFrame {
         continuarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SeleccionarBoleto seleccionarBoleto = new SeleccionarBoleto();
+                SeleccionarTipoDeBus seleccionarBoleto = new SeleccionarTipoDeBus();
                 seleccionarBoleto.setVisible(true);
                 dispose(); // Cierra la ventana actual
             }
         });
+
 
         botonPanel.add(continuarButton);
 
