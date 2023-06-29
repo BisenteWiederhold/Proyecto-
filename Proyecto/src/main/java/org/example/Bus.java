@@ -1,21 +1,23 @@
 package org.example;
 
-public abstract class Asientos {
+import java.util.ArrayList;
 
-    public Asientos(){
-    }
+public abstract class Bus {
+    private ArrayList<Boleto> asiento;
 
-    public Asientos getSerie(){
-        return this;
+    public Bus(){
+        this.asiento = new ArrayList<>(20);
     }
     public abstract String getTipo();
     public abstract int getPrecio();
-
+    public void llenarBus(int a){
+        asiento.remove(a);
+    }
 }
 
-class Normal extends Asientos{
+class Normal extends Bus{
     private String tipo = "normal";
-    private int a = 100;
+    private int precio = 5000;
 
     public Normal(){
         super();
@@ -25,12 +27,12 @@ class Normal extends Asientos{
         return tipo;
     }
     public int getPrecio(){
-        return a;
+        return precio;
     }
 }
-class SalonCama extends Asientos{
+class SalonCama extends Bus{
     private String tipo = "SalonCama";
-    private int a = 500;
+    private int a = 7000;
 
     public SalonCama(){
         super();
