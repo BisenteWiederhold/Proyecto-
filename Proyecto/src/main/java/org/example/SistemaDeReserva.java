@@ -11,6 +11,10 @@ public class SistemaDeReserva {
     public String dia1 = "Lunes", dia2 = "Miercoles", dia3 = "Viernes";
     private int hr1, hr2, hr3;
     private int pago;
+    private Normal bus1;
+    private SalonCama bus2;
+    private String b;
+    private int asiento;
     public SistemaDeReserva(){
         this.BoletoOrigen = "";
         this.BoletoDestino = "";
@@ -21,6 +25,10 @@ public class SistemaDeReserva {
         this.hr1 = 7;
         this.hr2 = 12;
         this.hr3 = 18;
+        this.asiento=0;
+        this.b = "";
+        this.bus1 = new Normal();
+        this.bus2 = new SalonCama();
     }
     public Boleto elegirBoleto(String a, String b, String c, int d){
         if(a == b){
@@ -317,22 +325,30 @@ public class SistemaDeReserva {
         return null;
     }
     public Bus elegirBusAsiento(String s, int y){
-        String n = "Normal";
-        String m = "SalonCama";
-        if(s == n){
-            Normal b1 = new Normal();
-            b1.llenarBus(y);
+        b = s;
+        asiento = y;
+        if(b == bus1.getTipo()){
+            Normal b1 = bus1;
+            b1.llenarBus(asiento);
             pago = pago + b1.getPrecio();
             return b1;
-        }else if(s==m){
-            SalonCama b2 = new SalonCama();
-            b2.llenarBus(y);
+        }else if(b == bus2.getTipo()){
+            SalonCama b2 = bus2;
+            b2.llenarBus(asiento);
             pago = pago + b2.getPrecio();
             return b2;
         }
         return null;
     }
-    public int Pago(){
+    public String getCom(){
+        int x = BoletoSalida, y = BoletoLLegada, p = pago, z = asiento;
+        String x1 = String.valueOf(x);
+        String y1 = String.valueOf(y);
+        String p1 = String.valueOf(p);
+        String z1 = String.valueOf(z);
+        return "Tu viaje es de "+BoletoOrigen+" a "+BoletoDestino+", dia "+BoletoDia+"\n"+"El bus sale a las "+x1+":00 hrs y llega a destino a las "+y1+":00 hrs\nPor el precio de "+p1+", Tu bus es:"+b+",asiento "+z1;
+    }
+    public int ConfirmarPago(){
         return pago;
     }
 }
