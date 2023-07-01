@@ -78,8 +78,4 @@ public class Pagar extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    public static void main(String[] args) {
-        Pagar pagar = new Pagar(100.0);
-        pagar.setVisible(true);
-    }
 }

@@ -123,12 +123,4 @@ public class SeleccionarBoleto extends JFrame {
         return horasSalida;
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            String origen = "Puerto Montt"; // Reemplaza con el valor correspondiente
-            String destino = "Santiago"; // Reemplaza con el valor correspondiente
-            SeleccionarBoleto seleccionarBoleto = new SeleccionarBoleto(origen, destino);
-            seleccionarBoleto.setVisible(true);
-        });
-    }
 }

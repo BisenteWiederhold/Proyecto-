@@ -65,13 +65,12 @@ public class SeleccionarAsientos extends JFrame {
         pack();
         setLocationRelativeTo(null);
     }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            String origen = "Puerto Montt"; // Reemplaza con el valor correspondiente
-            String destino = "Santiago"; // Reemplaza con el valor correspondiente
-            Bus bus = new Normal(); // Cambia el tipo de bus según tus necesidades
-            int duracionViaje = 6; // Duración del viaje en horas
+            String origen = "Puerto Montt";
+            String destino = "Santiago";
+            Bus bus = new Normal();
+            int duracionViaje = 6;
             SeleccionarAsientos seleccionarAsiento = new SeleccionarAsientos(origen, destino, bus, duracionViaje);
             seleccionarAsiento.setVisible(true);
         });
