@@ -17,7 +17,7 @@ public class Informacion extends JFrame {
         JLabel tipoBusesLabel = new JLabel("Tipo de buses: Semi cama, Salón cama");
         tipoBusesLabel.setHorizontalAlignment(JLabel.CENTER);
 
-        JLabel salidaLabel = new JLabel("Horas de Salida: 07:00 AM, 08:00 AM,08:30 AM, 10:00 AM, 10:30 AM , 16:00 PM, 16:30 PM");
+        JLabel salidaLabel = new JLabel("Horas de Salida: 07:00 AM, 08:00 AM, 10:00 AM, 16:00 PM");
         salidaLabel.setHorizontalAlignment(JLabel.CENTER);
 
         JLabel diasLabel = new JLabel("Días Disponibles: Lunes, Miércoles, Viernes");
