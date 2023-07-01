@@ -25,10 +25,10 @@ public class SeleccionarOrigen extends JFrame {
         opcionesPanel.setLayout(new GridLayout(2, 1));
 
         JLabel label1 = new JLabel("Opción 1:");
-        comboBox1 = new JComboBox<>(new String[]{"Punta Arenas", "Puerto Montt", "Concepción", "Santiago", "Valparaiso"});
+        comboBox1 = new JComboBox<>(new String[]{"Puerto Montt", "Valdivia", "Concepción", "Santiago", "Valparaiso"});
 
         JLabel label2 = new JLabel("Opción 2:");
-        comboBox2 = new JComboBox<>(new String[]{"Punta Arenas", "Puerto Montt", "Concepción", "Santiago", "Valparaiso"});
+        comboBox2 = new JComboBox<>(new String[]{"Puerto Montt", "Valdivia", "Concepción", "Santiago", "Valparaiso"});
 
         opcionesPanel.add(label1);
         opcionesPanel.add(comboBox1);

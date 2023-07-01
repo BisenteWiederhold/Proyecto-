@@ -7,52 +7,48 @@ import java.awt.event.ActionListener;
 public class SeleccionarTipoDeBus extends JFrame {
     public SeleccionarTipoDeBus() {
         setTitle("Seleccionar Tipo de Bus");
+        setPreferredSize(new Dimension(400, 350));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setPreferredSize(new Dimension(400, 300));
-
-        JLabel titleLabel = new JLabel("Seleccionar Tipo de Bus");
-        titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
-        titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(2, 1));
+        panel.setLayout(new GridLayout(3, 1, 10, 10));
 
-        JButton salonCamaButton = new JButton("Salón Cama");
-        salonCamaButton.setPreferredSize(new Dimension(200, 50));
-        salonCamaButton.addActionListener(new ActionListener() {
+        JLabel label = new JLabel("Seleccione el tipo de bus:");
+        panel.add(label);
+
+        JButton botonSemiCama = new JButton("Semi Cama");
+        botonSemiCama.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Ventana ventanaPrincipal = new Ventana();
-                ventanaPrincipal.setVisible(true);
-                dispose();
+                SeleccionarAsientos seleccionarAsientos = new SeleccionarAsientos();
+                seleccionarAsientos.setVisible(true);
+                dispose(); // Cierra la ventana actual
             }
         });
+        panel.add(botonSemiCama);
 
-        JButton semiCamaButton = new JButton("Semi Cama");
-        semiCamaButton.setPreferredSize(new Dimension(200, 50));
-        semiCamaButton.addActionListener(new ActionListener() {
+        JButton botonSalonCama = new JButton("Salón Cama");
+        botonSalonCama.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Ventana ventanaPrincipal = new Ventana();
-                ventanaPrincipal.setVisible(true);
-                dispose();
+                SeleccionarAsientos seleccionarAsientos = new SeleccionarAsientos();
+                seleccionarAsientos.setVisible(true);
+                dispose(); // Cierra la ventana actual
             }
         });
+        panel.add(botonSalonCama);
 
-        panel.add(salonCamaButton);
-        panel.add(semiCamaButton);
-
-        add(titleLabel, BorderLayout.NORTH);
-        add(panel, BorderLayout.CENTER);
-
+        setContentPane(panel);
         pack();
         setLocationRelativeTo(null);
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            SeleccionarTipoDeBus seleccionTipoDeBus = new SeleccionarTipoDeBus();
-            seleccionTipoDeBus.setVisible(true);
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                SeleccionarTipoDeBus seleccionarTipodeBus = new SeleccionarTipoDeBus();
+                seleccionarTipodeBus.setVisible(true);
+            }
         });
     }
 }

@@ -1,7 +1,6 @@
 package org.example;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 
 public class Ventana extends JFrame {
     public Ventana() {
@@ -9,54 +8,49 @@ public class Ventana extends JFrame {
         setTitle("Buses ETM");
         setPreferredSize(new Dimension(640, 480));
 
-        String imagePath = "C:\\Users\\vicen\\Desktop\\Proyecto-\\Imagenes\\Buses.jpg";
+        JPanel panel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                Image backgroundImage = new ImageIcon("Buses.jpg").getImage();
+                g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
 
-        File imageFile = new File(imagePath);
-        if (!imageFile.exists()) {
-            System.out.println("La imagen de fondo no existe");
-        } else {
-            ImageIcon backgroundImage = new ImageIcon(imagePath);
-            JLabel backgroundLabel = new JLabel(backgroundImage);
+        JLabel reservaLabel = new JLabel("Reserva YA!");
+        reservaLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        reservaLabel.setForeground(Color.BLACK);
 
-            JPanel panel = new JPanel();
-            panel.setLayout(new BorderLayout());
-            panel.add(backgroundLabel, BorderLayout.CENTER);
+        JPanel topPanel = new JPanel();
+        topPanel.setOpaque(false);
+        topPanel.add(reservaLabel);
+        panel.add(topPanel, BorderLayout.NORTH);
 
-            JLabel reservaLabel = new JLabel("Reserva YA!");
-            reservaLabel.setFont(new Font("Arial", Font.BOLD, 24));
-            reservaLabel.setForeground(Color.BLACK);
+        JButton botonReserva = new JButton("Empezar Reserva");
+        botonReserva.setPreferredSize(new Dimension(200, 100));
+        botonReserva.addActionListener(e -> {
+            SeleccionarOrigen seleccionarLugar = new SeleccionarOrigen();
+            seleccionarLugar.setVisible(true);
+            dispose();
+        });
 
-            JPanel topPanel = new JPanel();
-            topPanel.setOpaque(false);
-            topPanel.add(reservaLabel);
-            panel.add(topPanel, BorderLayout.NORTH);
+        JButton botonPasajes = new JButton("Ver Pasajes Disponibles");
+        botonPasajes.setPreferredSize(new Dimension(200, 100));
+        botonPasajes.addActionListener(e -> {
+            Informacion info = new Informacion();
+            info.setVisible(true);
+            dispose();
+        });
 
-            JButton botonReserva = new JButton("Empezar Reserva");
-            botonReserva.setPreferredSize(new Dimension(200, 100));
-            botonReserva.addActionListener(e -> {
-                SeleccionarOrigen seleccionarLugar = new SeleccionarOrigen();
-                seleccionarLugar.setVisible(true);
-                dispose();
-            });
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout());
+        buttonPanel.setOpaque(false);
+        buttonPanel.add(botonReserva);
+        buttonPanel.add(botonPasajes);
 
-            JButton botonPasajes = new JButton("Ver Pasajes Disponibles");
-            botonPasajes.setPreferredSize(new Dimension(200, 100));
-            botonPasajes.addActionListener(e -> {
-                SeleccionarAsientos seleccionarAsientos = new SeleccionarAsientos();
-                seleccionarAsientos.setVisible(true);
-                dispose();
-            });
+        panel.add(buttonPanel, BorderLayout.SOUTH);
 
-            JPanel buttonPanel = new JPanel();
-            buttonPanel.setLayout(new FlowLayout());
-            buttonPanel.setOpaque(false);
-            buttonPanel.add(botonReserva);
-            buttonPanel.add(botonPasajes);
-
-            panel.add(buttonPanel, BorderLayout.SOUTH);
-
-            add(panel);
-        }
+        setContentPane(panel);
 
         pack();
         setLocationRelativeTo(null);

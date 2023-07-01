@@ -1,61 +1,72 @@
 package org.example;
+import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public class SeleccionarAsientos extends JFrame {
-    private static final int NUM_ASIENTOS = 20;
-    private static final int FILAS = 5;
-    private static final int COLUMNAS = 4;
-    private static final int BOTON_WIDTH = 100;
-    private static final int BOTON_HEIGHT = 100;
-
     public SeleccionarAsientos() {
-        setTitle("Seleccionar Asientos");
+        setTitle("Seleccionar Asiento");
+        setPreferredSize(new Dimension(600, 450));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(FILAS, COLUMNAS, 10, 10));
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new GridLayout(5, 4, 10, 10));
 
-        for (int fila = 0; fila < FILAS; fila++) {
-            for (int col = 0; col < COLUMNAS; col++) {
-                int numAsientos = fila * COLUMNAS + col + 1;
+        try {
+            BufferedImage asientoImage = ImageIO.read(getClass().getClassLoader().getResource("Asientos.png"));
 
-                if (numAsientos <= NUM_ASIENTOS) {
-                    JButton button = new JButton(String.valueOf(numAsientos));
-                    button.setPreferredSize(new Dimension(BOTON_WIDTH, BOTON_HEIGHT));
+            int numeroAsiento = 1;
 
-                    Border buttonBorder = BorderFactory.createEmptyBorder();
-                    buttonBorder = BorderFactory.createLineBorder(Color.DARK_GRAY, 1);
-                    buttonBorder = BorderFactory.createCompoundBorder(buttonBorder, BorderFactory.createEmptyBorder(10, 10, 10, 10));
-                    button.setBorder(buttonBorder);
+            for (int fila = 0; fila < 5; fila++) {
+                for (int col = 0; col < 4; col++) {
+                    if (col == 2) {
+                        mainPanel.add(Box.createRigidArea(new Dimension(10, 10)));
+                    }
 
-                    button.setBackground(Color.LIGHT_GRAY);
+                    if (numeroAsiento <= 20) {
+                        JPanel asientoPanel = new JPanel();
+                        asientoPanel.setLayout(new BorderLayout());
 
-                    button.addActionListener(new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            Pagar pagar = new Pagar();
-                            pagar.setVisible(true);
-                        }
-                    });
+                        ImageIcon asientoIcon = new ImageIcon(asientoImage);
+                        JLabel asientoLabel = new JLabel(asientoIcon);
 
-                    panel.add(button);
-                } else {
-                    panel.add(new JPanel());
-                }
+                        asientoPanel.add(asientoLabel, BorderLayout.CENTER);
 
-                if (col == 1) {
-                    panel.add(new JPanel());
+                        final int numero = numeroAsiento;
+                        asientoPanel.addMouseListener(new MouseAdapter() {
+                            @Override
+                            public void mouseClicked(MouseEvent e) {
+                                SwingUtilities.invokeLater(() -> {
+                                    DatosComprador datosComprador = new DatosComprador();
+                                    datosComprador.setNumeroAsiento(numero);
+                                    datosComprador.setVisible(true);
+                                    dispose();
+                                });
+                            }
+                        });
+
+                        mainPanel.add(asientoPanel);
+                        numeroAsiento++;
+                    }
                 }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        add(panel);
+        add(mainPanel, BorderLayout.CENTER);
         pack();
         setLocationRelativeTo(null);
-        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            SeleccionarAsientos seleccionarAsiento = new SeleccionarAsientos();
+            seleccionarAsiento.setVisible(true);
+        });
     }
 }
