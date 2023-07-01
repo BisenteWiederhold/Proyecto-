@@ -19,23 +19,23 @@ class PersonalEmpresaTest {
     @Test
     @DisplayName("Se sabe cuanto se pago")
     public void TestCuantoSePago()throws Exception{
-        p = new PersonalEmpresa(sist,"Valdivia","Puerto Montt","Lunes",12,"SalonCama",14);
+        p = new PersonalEmpresa(sist,"Valdivia","Puerto Montt","Lunes",10,"SalonCama",14);
         assertEquals(18000,p.CuantoPague());
 
         p = new PersonalEmpresa(sist,"Concepcion","Santiago","Miercoles",7,"Normal",3);
         assertEquals(14000,p.CuantoPague());
 
-        p = new PersonalEmpresa(sist,"Valparaiso","Concepcion","Viernes",18,"Normal",1);
+        p = new PersonalEmpresa(sist,"Valparaiso","Concepcion","Viernes",16,"Normal",1);
         assertEquals(14000,p.CuantoPague());
 
-        p = new PersonalEmpresa(sist,"Puerto Montt","Valparaiso","Lunes",7,"SalonCama",9);
+        p = new PersonalEmpresa(sist,"Puerto Montt","Valparaiso","Lunes",8,"SalonCama",9);
         assertEquals(18000,p.CuantoPague());
     }
     @Test
     @DisplayName("Test cuando elgen el mismo origen y destoino")
     public void TestParaElegirOrigenYDestino(){
         Exception exception = assertThrows(SeRepitenLugaresException.class,()->{
-            p = new PersonalEmpresa(sist,"Concepcion","Concepcion","Viernes",18,"Normal",2);
+            p = new PersonalEmpresa(sist,"Concepcion","Concepcion","Viernes",16,"Normal",2);
         });
     }
     @Test

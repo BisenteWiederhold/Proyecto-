@@ -18,7 +18,7 @@ class SistemaDeReservaTest {
     @Test
     @DisplayName("Comprar un boleto correctamente")
     public void ComprarBoleto()throws Exception{
-        Boleto b = s.elegirBoleto("Valparaiso","Valdivia","Lunes",18);
+        Boleto b = s.elegirBoleto("Valparaiso","Valdivia","Lunes",16);
         assertNotNull(b);
         assertNotNull(b.getLlegada());
         assertNotNull(b.getSalida());
