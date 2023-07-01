@@ -22,7 +22,7 @@ public class SeleccionarTipoDeBus extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 SeleccionarAsientos seleccionarAsientos = new SeleccionarAsientos();
                 seleccionarAsientos.setVisible(true);
-                dispose(); // Cierra la ventana actual
+                dispose();
             }
         });
         panel.add(botonSemiCama);
@@ -33,7 +33,7 @@ public class SeleccionarTipoDeBus extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 SeleccionarAsientos seleccionarAsientos = new SeleccionarAsientos();
                 seleccionarAsientos.setVisible(true);
-                dispose(); // Cierra la ventana actual
+                dispose();
             }
         });
         panel.add(botonSalonCama);
@@ -43,12 +43,4 @@ public class SeleccionarTipoDeBus extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                SeleccionarTipoDeBus seleccionarTipodeBus = new SeleccionarTipoDeBus();
-                seleccionarTipodeBus.setVisible(true);
-            }
-        });
-    }
 }
