@@ -6,6 +6,10 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *  Esta clase es para el panel de empezar a reservar el pasaje
+ */
+
 public class DatosComprador extends JFrame {
     private int numeroAsiento;
     private String origen;
@@ -15,6 +19,15 @@ public class DatosComprador extends JFrame {
     private JTextField nombreTextField;
     private JTextField rutTextField;
     private JTextField correoTextField;
+
+    /**
+     *
+     * @param numeroAsiento indica el numero de asiento del bus a escoger
+     * @param origen es un string que es igual al lugar de donde empieza el viaje, que se podra seleccionar en el panel
+     * @param destino es un string que es igual al lugar de donde termina el viaje, que se podra seleccionar en el panel
+     * @param bus indica el tipo de bus que se puede seleccionar en los paneles, ya sea normal o salon cama
+     * @param duracionViaje indica la duracion total del viaje, que tambien lo muestra el panel
+     */
 
     public DatosComprador(int numeroAsiento, String origen, String destino, Bus bus, int duracionViaje) {
         this.numeroAsiento = numeroAsiento;
@@ -97,9 +110,21 @@ public class DatosComprador extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    /**
+     *
+     * @param numeroAsiento recibe un int que asigan el numero de asiento
+     */
+
     public void setNumeroAsiento(int numeroAsiento) {
         this.numeroAsiento = numeroAsiento;
     }
+
+    /**
+     *
+     * @param origen recibe el posible lugar de inicio del viaje
+     * @param destino  recibe el posible lugar de termino del viaje
+     * @return retorna si esta no hay la opcion de horario disponible para el viaje
+     */
 
     private String obtenerHoraSalida(String origen, String destino) {
         Map<String, Map<String, String>> horasSalida = new HashMap<>();
@@ -119,6 +144,11 @@ public class DatosComprador extends JFrame {
         return "Hora no disponible";
     }
 
+    /**
+     *
+     * @return retorna una hora de salida disponible desde Puerto Montt para que aprezca en el panel que son las 8 am
+     */
+
     private Map<String, String> crearHorasSalidaPuertoMontt() {
         Map<String, String> horasSalida = new HashMap<>();
         horasSalida.put("santiago", "08:00 AM");
@@ -126,6 +156,11 @@ public class DatosComprador extends JFrame {
         horasSalida.put("valdivia", "08:00 AM");
         return horasSalida;
     }
+
+    /**
+     *
+     * @return retorna una hora de salida disponible desde Santiago para que aprezca en el panel que son las 10 am
+     */
 
     private Map<String, String> crearHorasSalidaSantiago() {
         Map<String, String> horasSalida = new HashMap<>();
@@ -135,11 +170,21 @@ public class DatosComprador extends JFrame {
         return horasSalida;
     }
 
+    /**
+     *
+     * @return retorna una hora de salida disponible desde Valparaiso para que aprezca en el panel que son las 8 am
+     */
+
     private Map<String, String> crearHorasSalidaValparaiso() {
         Map<String, String> horasSalida = new HashMap<>();
         horasSalida.put("santiago", "08:00 AM");
         return horasSalida;
     }
+
+    /**
+     *
+     * @return retorna una hora de salida disponible desde Concepcion para que aparezca en el panel que son las 7 am
+     */
 
     private Map<String, String> crearHorasSalidaConcepcion() {
         Map<String, String> horasSalida = new HashMap<>();
@@ -147,6 +192,11 @@ public class DatosComprador extends JFrame {
         horasSalida.put("santiago", "7:00 AM");
         return horasSalida;
     }
+
+    /**
+     *
+     * @return retorna una hora de salida disponible desde Valdivia para que aparezca en el panel que son las 4 pm
+     */
 
     private Map<String, String> crearHorasSalidaValdivia() {
         Map<String, String> horasSalida = new HashMap<>();
