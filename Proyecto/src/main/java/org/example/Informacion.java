@@ -44,7 +44,7 @@ public class Informacion extends JFrame {
                     JPanel asiento = new JPanel();
                     asiento.setPreferredSize(new Dimension(60, 60));
 
-                    ImageIcon asientoIcon = new ImageIcon(getClass().getClassLoader().getResource("Asientos.png"));
+                    ImageIcon asientoIcon = new ImageIcon("Asientos.png");
                     JLabel asientoLabel = new JLabel(asientoIcon);
                     asiento.add(asientoLabel);
                     asientosPanel.add(asiento);
