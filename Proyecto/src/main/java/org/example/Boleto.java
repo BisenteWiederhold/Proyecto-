@@ -5,13 +5,14 @@ public class Boleto {
     private String dia;
     private int salida, llegada;
 
-    public Boleto(String a, String b, String c, int d, int e){
-        this.origen = a;
-        this.destino = b;
-        this.dia = c;
-        this.salida = d;
-        this.llegada = e;
+    public Boleto(String origen, String destino, String dia, int salida, int llegada){
+        this.origen = origen;
+        this.destino = destino;
+        this.dia = dia;
+        this.salida = salida;
+        this.llegada = llegada;
     }
+
     public String getOrigen() {
         return origen;
     }
@@ -28,3 +29,4 @@ public class Boleto {
         return llegada;
     }
 }
+
