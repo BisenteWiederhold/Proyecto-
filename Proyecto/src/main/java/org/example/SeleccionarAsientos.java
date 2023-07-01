@@ -53,11 +53,5 @@ public class SeleccionarAsientos extends JFrame {
         pack();
         setLocationRelativeTo(null);
     }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            SeleccionarAsientos seleccionarAsiento = new SeleccionarAsientos();
-            seleccionarAsiento.setVisible(true);
-        });
-    }
+    
 }
