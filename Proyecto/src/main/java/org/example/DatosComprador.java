@@ -122,7 +122,7 @@ public class DatosComprador extends JFrame {
     private Map<String, String> crearHorasSalidaPuertoMontt() {
         Map<String, String> horasSalida = new HashMap<>();
         horasSalida.put("santiago", "08:00 AM");
-        horasSalida.put("concepción", "08:30 AM");
+        horasSalida.put("concepción", "08:00 AM");
         horasSalida.put("valdivia", "08:00 AM");
         return horasSalida;
     }
@@ -130,14 +130,14 @@ public class DatosComprador extends JFrame {
     private Map<String, String> crearHorasSalidaSantiago() {
         Map<String, String> horasSalida = new HashMap<>();
         horasSalida.put("puerto montt", "10:00 AM");
-        horasSalida.put("concepción", "10:30 AM");
+        horasSalida.put("concepción", "10:00 AM");
         horasSalida.put("valdivia", "10:00 AM");
         return horasSalida;
     }
 
     private Map<String, String> crearHorasSalidaValparaiso() {
         Map<String, String> horasSalida = new HashMap<>();
-        horasSalida.put("santiago", "09:00 AM");
+        horasSalida.put("santiago", "08:00 AM");
         return horasSalida;
     }
 
@@ -151,7 +151,7 @@ public class DatosComprador extends JFrame {
     private Map<String, String> crearHorasSalidaValdivia() {
         Map<String, String> horasSalida = new HashMap<>();
         horasSalida.put("puerto montt", "16:00 PM");
-        horasSalida.put("santiago", "16:30 PM");
+        horasSalida.put("santiago", "16:00 PM");
         return horasSalida;
     }
 }
