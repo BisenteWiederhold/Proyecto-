@@ -5,7 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Crea la pantalla final
+ */
+
 public class PantallaFinal extends JFrame {
+    /**
+     * El construvor crea las dimensiones del panel y que se pueda salir o volver
+     */
     public PantallaFinal() {
         setTitle("Pantalla Final");
         setPreferredSize(new Dimension(400, 200));

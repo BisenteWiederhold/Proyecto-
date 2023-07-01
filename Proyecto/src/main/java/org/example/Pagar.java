@@ -4,8 +4,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Clase para que en el panel se pueda pagar
+ */
+
 public class Pagar extends JFrame {
     private double precio;
+
+    /**
+     *
+     * @param precio Indica el precio que puede tener el pasaje y crear un frame donde aparezca el precio y un boton con el el que se pueda pagar, sus dimensones y ubicacion dentro del panel
+     */
 
     public Pagar(double precio) {
         this.precio = precio;

@@ -2,7 +2,13 @@ package org.example;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ *  Clase para ver en el panel las disponiblidades de pasajes
+ */
 public class Informacion extends JFrame {
+    /**
+     * Secrean las dimensiones de los frames y sus respectivos mensajes o info que debe tener
+     */
     public Informacion() {
         setTitle("Información");
         setPreferredSize(new Dimension(1000, 800));
