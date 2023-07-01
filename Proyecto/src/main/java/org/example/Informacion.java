@@ -17,16 +17,16 @@ public class Informacion extends JFrame {
         JLabel tipoBusesLabel = new JLabel("Tipo de buses: Semi cama, Salón cama");
         tipoBusesLabel.setHorizontalAlignment(JLabel.CENTER);
 
-        JLabel salidaLabel = new JLabel("Horas de Salida: 07:00 AM, 12:00 AM, 18:00 PM");
+        JLabel salidaLabel = new JLabel("Horas de Salida: 07:00 AM, 08:00 AM,08:30 AM, 10:00 AM, 10:30 AM , 16:00 PM, 16:30 PM");
         salidaLabel.setHorizontalAlignment(JLabel.CENTER);
 
         JLabel diasLabel = new JLabel("Días Disponibles: Lunes, Miércoles, Viernes");
         diasLabel.setHorizontalAlignment(JLabel.CENTER);
 
-        JLabel PreciosELabel = new JLabel("Precios bus estandar: 7 horas o + -> 9000 || menos de 7 horas -> 7000");
+        JLabel PreciosELabel = new JLabel("Precios bus estandar: 14.000 $");
         PreciosELabel.setHorizontalAlignment(JLabel.CENTER);
 
-        JLabel PreciosSLabel = new JLabel("Precios bus Salon Cama: 7 horas o + -> 11.000 || menos de 7 horas -> 9000");
+        JLabel PreciosSLabel = new JLabel("Precios bus Salon Cama: 18.000 $");
         PreciosSLabel.setHorizontalAlignment(JLabel.CENTER);
 
         textPanel.add(tipoBusesLabel);
@@ -74,10 +74,4 @@ public class Informacion extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            Informacion informacion = new Informacion();
-            informacion.setVisible(true);
-        });
-    }
 }

@@ -5,13 +5,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Pagar extends JFrame {
-    public Pagar() {
+    private double precio;
+
+    public Pagar(double precio) {
+        this.precio = precio;
+
         setTitle("Pagar");
-        setPreferredSize(new Dimension(400, 200));
+        setPreferredSize(new Dimension(400, 250));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 1));
+        panel.setLayout(new GridLayout(5, 1));
+
+        JLabel labelPrecio = new JLabel("Precio final: $" + precio);
 
         JRadioButton opcion1 = new JRadioButton("VISA");
         JRadioButton opcion2 = new JRadioButton("MASTER CARD");
@@ -38,18 +44,21 @@ public class Pagar extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (opcion1.isSelected()) {
                     JOptionPane.showMessageDialog(Pagar.this, "VISA seleccionada. Realizando pago...");
-                    Ventana ventana = new Ventana();
-                    ventana.setVisible(true);
+
+                    PantallaFinal pantallaFinal = new PantallaFinal();
+                    pantallaFinal.setVisible(true);
                     dispose();
                 } else if (opcion2.isSelected()) {
                     JOptionPane.showMessageDialog(Pagar.this, "MASTER CARD seleccionada. Realizando pago...");
-                    Ventana ventana = new Ventana();
-                    ventana.setVisible(true);
+
+                    PantallaFinal pantallaFinal = new PantallaFinal();
+                    pantallaFinal.setVisible(true);
                     dispose();
                 } else if (opcion3.isSelected()) {
                     JOptionPane.showMessageDialog(Pagar.this, "PAYPAL seleccionada. Realizando pago...");
-                    Ventana ventana = new Ventana();
-                    ventana.setVisible(true);
+
+                    PantallaFinal pantallaFinal = new PantallaFinal();
+                    pantallaFinal.setVisible(true);
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(Pagar.this, "Selecciona una opción antes de pagar.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -57,6 +66,7 @@ public class Pagar extends JFrame {
             }
         });
 
+        panel.add(labelPrecio);
         panel.add(opcion1);
         panel.add(opcion2);
         panel.add(opcion3);
@@ -66,5 +76,10 @@ public class Pagar extends JFrame {
         add(regresarButton, BorderLayout.SOUTH);
         pack();
         setLocationRelativeTo(null);
+    }
+
+    public static void main(String[] args) {
+        Pagar pagar = new Pagar(100.0);
+        pagar.setVisible(true);
     }
 }

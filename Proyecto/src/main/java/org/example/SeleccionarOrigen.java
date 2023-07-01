@@ -49,7 +49,7 @@ public class SeleccionarOrigen extends JFrame {
                 if (origen.equals(destino)) {
                     JOptionPane.showMessageDialog(SeleccionarOrigen.this, "El origen y el destino deben ser diferentes", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
-                    SeleccionarBoleto seleccionarBoleto = new SeleccionarBoleto();
+                    SeleccionarBoleto seleccionarBoleto = new SeleccionarBoleto(origen, destino);
                     seleccionarBoleto.setVisible(true);
                     dispose();
                 }
