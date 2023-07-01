@@ -4,11 +4,23 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Clase para seleccionar los asientos en el panel
+ */
+
 public class SeleccionarAsientos extends JFrame {
     private String origen;
     private String destino;
     private Bus bus;
     private int duracionViaje;
+
+    /**
+     *
+     * @param origen Para elegir los asientos primero tiene estar seleccionado el origen del viaje
+     * @param destino Tambien tiene que estar elegido el destino
+     * @param bus el bus tiene que estar seleccionado
+     * @param duracionViaje  las horas que dura el viaje
+     */
 
     public SeleccionarAsientos(String origen, String destino, Bus bus, int duracionViaje) {
         this.origen = origen;
@@ -65,13 +77,18 @@ public class SeleccionarAsientos extends JFrame {
         pack();
         setLocationRelativeTo(null);
     }
+
+    /**
+     *
+     * @param args para ingresar el destino y origen
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             String origen = "Puerto Montt";
             String destino = "Santiago";
             Bus bus = new Normal();
-            int duracionViaje = 6;
-            SeleccionarAsientos seleccionarAsiento = new SeleccionarAsientos(origen, destino, bus, duracionViaje);
+            int PosibleduracionViaje = 6;
+            SeleccionarAsientos seleccionarAsiento = new SeleccionarAsientos(origen, destino, bus, PosibleduracionViaje);
             seleccionarAsiento.setVisible(true);
         });
     }

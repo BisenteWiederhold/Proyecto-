@@ -4,9 +4,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * panel para seleccionar origen
+ */
 public class SeleccionarOrigen extends JFrame {
     private JComboBox<String> comboBox1;
     private JComboBox<String> comboBox2;
+
+    /**
+     * constructor para darle las medidas de panel, botones y acciones
+     */
 
     public SeleccionarOrigen() {
         setTitle("Seleccionar Origen");

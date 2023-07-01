@@ -6,9 +6,18 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Clase para seleccionar boleto en el panel
+ */
 public class SeleccionarBoleto extends JFrame {
     private JComboBox<String> comboBox;
     private JLabel precioLabel;
+
+    /**
+     *
+     * @param origen En el panel se elige el origen
+     * @param destino En el panel se elige el destino
+     */
 
     public SeleccionarBoleto(String origen, String destino) {
         setTitle("Seleccionar Boleto");
@@ -88,6 +97,12 @@ public class SeleccionarBoleto extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    /**
+     *
+     * @param tipoBoleto detecta si es normal o salon cama
+     * @return retrona el precio dependiendo del tipo de bus
+     */
+
     private int obtenerPrecioBoleto(String tipoBoleto) {
         if (tipoBoleto.equals("Normal")) {
             return new Normal().getPrecio();
@@ -96,6 +111,13 @@ public class SeleccionarBoleto extends JFrame {
         }
         return 0;
     }
+
+    /**
+     *
+     * @param origen ingresa el origen del viaje
+     * @param destino ingresa el destino del viaje
+     * @return retorna si no hay hora o la hora de salida
+     */
 
     private String obtenerHoraSalida(String origen, String destino) {
         Map<String, Map<String, String>> horasSalida = new HashMap<>();
@@ -109,12 +131,22 @@ public class SeleccionarBoleto extends JFrame {
         return "Hora no disponible";
     }
 
+    /**
+     *
+     * @return retrona hora de salida
+     */
+
     private Map<String, String> crearHorasSalidaPuertoMontt() {
         Map<String, String> horasSalida = new HashMap<>();
         horasSalida.put("Santiago", "08:00 AM");
         horasSalida.put("Concepción", "09:30 AM");
         return horasSalida;
     }
+
+    /**
+     *
+     * @return retorna la salida
+     */
 
     private Map<String, String> crearHorasSalidaSantiago() {
         Map<String, String> horasSalida = new HashMap<>();

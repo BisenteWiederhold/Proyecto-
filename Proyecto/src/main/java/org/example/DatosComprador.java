@@ -119,11 +119,10 @@ public class DatosComprador extends JFrame {
         this.numeroAsiento = numeroAsiento;
     }
 
-    /**
-     *
-     * @param origen recibe el posible lugar de inicio del viaje
-     * @param destino  recibe el posible lugar de termino del viaje
-     * @return retorna si esta no hay la opcion de horario disponible para el viaje
+    /** Obtiene la hora de salida para un origen y destino dados.
+     * @param origen   El origen del viaje.
+     * @param destino  El destino del viaje.
+     * @return La hora de salida en formato de cadena de caracteres. Si la hora no está disponible, se devuelve "Hora no disponible".
      */
 
     private String obtenerHoraSalida(String origen, String destino) {
@@ -133,14 +132,11 @@ public class DatosComprador extends JFrame {
         horasSalida.put("valparaiso", crearHorasSalidaValparaiso());
         horasSalida.put("concepción", crearHorasSalidaConcepcion());
         horasSalida.put("valdivia", crearHorasSalidaValdivia());
-
         String origenLowerCase = origen.toLowerCase();
         String destinoLowerCase = destino.toLowerCase();
-
         if (horasSalida.containsKey(origenLowerCase) && horasSalida.get(origenLowerCase).containsKey(destinoLowerCase)) {
             return horasSalida.get(origenLowerCase).get(destinoLowerCase);
         }
-
         return "Hora no disponible";
     }
 

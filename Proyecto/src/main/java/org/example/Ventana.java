@@ -2,7 +2,14 @@ package org.example;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Abre una ventana donde se desarrollara el sistema de reserva
+ */
+
 public class Ventana extends JFrame {
+    /**
+     * Otorga las dimensiones, paneles opciones de cerrado y acciones para la ventana y el diseño en general de la ventana
+     */
     public Ventana() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Buses ETM");
