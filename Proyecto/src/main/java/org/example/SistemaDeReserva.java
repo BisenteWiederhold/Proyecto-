@@ -30,9 +30,9 @@ public class SistemaDeReserva {
         this.bus1 = new Normal();
         this.bus2 = new SalonCama();
     }
-    public Boleto elegirBoleto(String a, String b, String c, int d){
+    public Boleto elegirBoleto(String a, String b, String c, int d)throws SeRepitenLugaresException{
         if(a == b){
-            return null ;
+            throw new SeRepitenLugaresException("Tiene que elegir lugares distintos, el origen no puede ser igual que el destino");
         }else{
             BoletoOrigen = a;
             BoletoDestino = b;
@@ -324,19 +324,23 @@ public class SistemaDeReserva {
         }
         return null;
     }
-    public Bus elegirBusAsiento(String s, int y){
+    public Bus elegirBusAsiento(String s, int y)throws AsientoNoDisponibleException{
         b = s;
         asiento = y;
         if(b == bus1.getTipo()){
-            Normal b1 = bus1;
-            b1.llenarBus(asiento);
-            pago = pago + b1.getPrecio();
-            return b1;
+            if(bus1.getasiento(y)!=null){
+                pago = pago + bus1.getPrecio();
+                return bus1;
+            }else{
+                throw new AsientoNoDisponibleException("Asiento ocupado o no disponible");
+            }
         }else if(b == bus2.getTipo()){
-            SalonCama b2 = bus2;
-            b2.llenarBus(asiento);
-            pago = pago + b2.getPrecio();
-            return b2;
+            if(bus2.getasiento(y)!=null){
+                pago = pago + bus2.getPrecio();
+                return bus2;
+            }else{
+                throw new AsientoNoDisponibleException("Asiento ocupado o no disponible");
+            }
         }
         return null;
     }

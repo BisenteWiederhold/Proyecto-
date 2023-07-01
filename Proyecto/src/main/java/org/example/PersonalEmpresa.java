@@ -3,7 +3,7 @@ package org.example;
 public class PersonalEmpresa {
     private int costo;
     private String comprobante;
-    public PersonalEmpresa(SistemaDeReserva sist, String Origen, String Destino, String dia, int HoraSalida, String TipoBus, int asiento ){
+    public PersonalEmpresa(SistemaDeReserva sist, String Origen, String Destino, String dia, int HoraSalida, String TipoBus, int asiento ) throws AsientoNoDisponibleException, SeRepitenLugaresException {
         Boleto boleto = sist.elegirBoleto(Origen,Destino,dia,HoraSalida);
         Bus bus = sist.elegirBusAsiento(TipoBus,asiento);
         String s = sist.getCom();

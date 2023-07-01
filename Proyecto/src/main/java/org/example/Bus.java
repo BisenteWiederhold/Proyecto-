@@ -12,8 +12,14 @@ public abstract class Bus {
     }
     public abstract String getTipo();
     public abstract int getPrecio();
-    public void llenarBus(int a){
-        asiento.remove(a-1);
+    public Integer getasiento(int a){
+        int b = asiento.get(a-1);
+        if (b == 1){
+            asiento.remove(a-1);
+            return 1;
+        }else{
+            return null;
+        }
     }
 }
 class Normal extends Bus{
