@@ -24,7 +24,7 @@ public abstract class Bus {
 }
 class Normal extends Bus{
     private String tipo = "Normal";
-    private int precio = 5000;
+    private int precio = 14000;
 
     public Normal(){
         super();
@@ -39,7 +39,7 @@ class Normal extends Bus{
 }
 class SalonCama extends Bus{
     private String tipo = "SalonCama";
-    private int a = 7000;
+    private int a = 18000;
     public SalonCama(){
         super();
     }

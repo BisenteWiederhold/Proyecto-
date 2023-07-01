@@ -1,5 +1,4 @@
 package org.example;
-
 public class SistemaDeReserva {
     private String BoletoOrigen, BoletoDestino, BoletoDia;
     private int BoletoSalida, BoletoLLegada;
@@ -42,91 +41,71 @@ public class SistemaDeReserva {
                 switch (BoletoOrigen) {
                     case "Puerto Montt":
                         if (BoletoDestino == "Valdivia"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 3;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 8;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 13;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 14;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Valdivia":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 3;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 10;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 11;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Concepcion":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 8;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valdivia"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 6;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Santiago":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 13;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valdivia"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 10;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 1;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Valparaiso":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 14;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valdivia"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 11;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 6;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 1;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
@@ -136,91 +115,71 @@ public class SistemaDeReserva {
                 switch (BoletoOrigen) {
                     case "Puerto Montt":
                         if (BoletoDestino == "Valdivia"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 3;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 8;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 4000+pago;
                             BoletoLLegada = 1;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 4000+pago;
                             BoletoLLegada = 2;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Valdivia":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 3;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 10;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 11;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Concepcion":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 8;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valdivia"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 6;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Santiago":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 4000+pago;
                             BoletoLLegada = 1;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valdivia"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 10;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 1;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Valparaiso":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 4000+pago;
                             BoletoLLegada = 2;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valdivia"){
-                            pago = 4000+pago;
                             BoletoLLegada = d + 11;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 6;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 1;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
@@ -230,91 +189,71 @@ public class SistemaDeReserva {
                 switch (BoletoOrigen) {
                     case "Puerto Montt":
                         if (BoletoDestino == "Valdivia"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 3;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 4000+pago;
                             BoletoLLegada = 2;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 4000+pago;
                             BoletoLLegada = 7;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 4000+pago;
                             BoletoLLegada = 8;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Valdivia":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 3;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 4000+pago;
                             BoletoLLegada = 4;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 4000+pago;
                             BoletoLLegada = 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Concepcion":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 4000+pago;
                             BoletoLLegada = 2;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valdivia"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 6;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Santiago":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 4000+pago;
                             BoletoLLegada = 7;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valdivia"){
-                            pago = 4000+pago;
                             BoletoLLegada = 4;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valparaiso"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 1;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
                     case "Valparaiso":
                         if (BoletoDestino == "Puerto Montt"){
-                            pago = 4000+pago;
                             BoletoLLegada = 7;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Valdivia"){
-                            pago = 4000+pago;
                             BoletoLLegada = 5;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Concepcion"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 6;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }else if(BoletoDestino == "Santiago"){
-                            pago = 2000+pago;
                             BoletoLLegada = d + 1;
                             return new Boleto(BoletoOrigen,BoletoDestino,BoletoDia,BoletoSalida,BoletoLLegada);
                         }
@@ -329,14 +268,14 @@ public class SistemaDeReserva {
         asiento = y;
         if(b == bus1.getTipo()){
             if(bus1.getasiento(y)!=null){
-                pago = pago + bus1.getPrecio();
+                pago = bus1.getPrecio();
                 return bus1;
             }else{
                 throw new AsientoNoDisponibleException("Asiento ocupado o no disponible");
             }
         }else if(b == bus2.getTipo()){
             if(bus2.getasiento(y)!=null){
-                pago = pago + bus2.getPrecio();
+                pago = bus2.getPrecio();
                 return bus2;
             }else{
                 throw new AsientoNoDisponibleException("Asiento ocupado o no disponible");
